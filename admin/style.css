@@ -1,0 +1,11 @@
+
+.dashboard
+{
+    background-color: #1c7430;
+    color: #000;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+    height: 140px;
+    line-height: 30px;
+}

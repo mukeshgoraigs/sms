@@ -1,4 +1,10 @@
-
+<?php
+session_start();
+if(isset($_SESSION['username']))
+{
+    header('http://localhost/sms/admin/admindash.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +15,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<form action=".php" method="post">
+<form action="login.php" method="post">
     <div class="container-fluid">
 
         <div class="row border">
@@ -41,3 +47,23 @@
 </form>
 </body>
 </html>
+<?php
+
+if(isset($_POST['submit']))
+{
+include '../connection.php';
+$username=$_POST['username'];
+$password=$_POST['password'];
+$sql="SELECT * FROM admin WHERE username ='$username' AND password='$password'";
+$result=$conn->query($sql);
+if ($row=$result->fetch_assoc())
+{
+    $_SESSION['username']=$username;
+    header("Location: http://localhost/sms/admin/admindash.php");
+}
+else
+{
+    header("http://localhost/sms/user/login.php");
+}
+}
+?>

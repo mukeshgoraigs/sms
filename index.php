@@ -1,3 +1,8 @@
+<?php
+session_start();
+session_unset();
+?>
+
 <html>
 <head>
     <title>sms</title>
@@ -14,7 +19,7 @@
         <button class="btn btn-dark col-md-offset-11" type="button"><a href="user/login.php">Admin Login</a></button>
     <h1 align="center"><u>Welcome to Student Management System</u></h1>
     <div class="col-md-6 col-md-offset-3" style="border: 1px solid black  ">
-
+        <h4><b>Student Information</b></h4>
             <div class="form-group table">
                 <label>Choose Standered</label>
 <select class="stud" style="margin: 20px">
