@@ -12,20 +12,13 @@ else
 
 ?>
 <?php
-include ('header.php');
+include 'header.php';
 ?>
-<div class="row">
-<div class="col-md-6">
-<div class="form-group">
-    <button class="btn btn-danger"><a href="logout.php">Logout</a></button>
-</div>
-</div>
-<div class="col-md-6">
+
 <div class="form-group col-md-offset-11">
     <button class="btn btn-danger"><a href="logout.php">Logout</a></button>
 </div>
-</div>
-</div>
+
 <div class="container-fluid" align="center">
 <h1 style="background-color: #530602;color: #fff; margin-left: 20px;margin-right: 20px; height: 140px;line-height: 140px;">Welcome to Admin Dashboard</h1>
 
