@@ -14,12 +14,12 @@ session_unset();
 <div class="container-fluid">
 <div class="row">
 
-<form action="insert.php" method="post">
+<form action="admin/search.php" method="post">
 
         <button class="btn btn-dark col-md-offset-11" type="button"><a href="user/login.php">Admin Login</a></button>
-    <h1 align="center"><u>Welcome to Student Management System</u></h1>
+    <h1 align="center" style="font-size: 50px"><u>Welcome to Student Management System</u></h1>
     <div class="col-md-6 col-md-offset-3" style="border: 1px solid black  ">
-        <h4><b>Student Information</b></h4>
+        <h4 align="center"style=" font-size: 50px"><b>Student Information</b></h4>
             <div class="form-group table">
                 <label>Choose Standered</label>
 <select class="stud" style="margin: 20px">
@@ -33,13 +33,16 @@ session_unset();
 
 </select>
             </div>
-            <div class="form-group">
-            <label>Roll no</label>
-            <input type="text"class="form-control" name="rollno"required>
-            </div>
+
+        <div class="form-group">
+        <label>Roll no</label>
+        <input type="text"class="form-control" name="rollno"required>
+        </div>
+
                 <div class="form-group">
                     <button class="btn btn-primary" name="submit">Show information</button>
                 </div>
+    </div>
         </div>
 </form>
         </div>

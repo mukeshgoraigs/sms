@@ -1,7 +1,6 @@
 <?php
 session_start();
-error_reporting();
-if(isset( $_SESSION['name']))
+if(isset( $_SESSION['id']))
 {
     echo "";
 }
@@ -57,6 +56,7 @@ include ('titlehead.php');
         <th>Mobile no</th>
         <th>Standerd</th>
         <th>Edit</th>
+        <th>Delete</th>
     </tr>
 
     <?php
@@ -67,11 +67,11 @@ include ('titlehead.php');
         $name=$_POST['name'];
 
 
-        $sql="SELECT * FROM student WHERE standerd='$standerd' AND name='$name'";
+        $sql="SELECT * FROM student WHERE standerd='$standerd' AND name ='$name'";
         $run=mysqli_query($conn,$sql);
         if(mysqli_num_rows($run)<1)
         {
-            echo "<tr><td colspan='8'>No Records found</td></tr>";
+            echo "<tr><td colspan='9'>No Records found</td></tr>";
         }
         else
         {
@@ -90,7 +90,8 @@ include ('titlehead.php');
         <td><?php echo $data['city'];?></td>
         <td><?php echo $data['phone'];?></td>
         <td><?php echo $data['standerd'];?></td>
-        <td>Edit</td>
+        <td><a href="updateform.php?id=<?php echo $data['id'];?>">Edit</a> </td>
+        <th><a href="deletestudent.php?id=<?php echo $data['id'];?>">Delete</a> </th>
     </tr>
     <?php
             }

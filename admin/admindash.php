@@ -7,7 +7,7 @@ if(isset( $_SESSION['username']))
 }
 else
 {
-    header('http://localhost/sms/');
+    header('http://localhost/sms/user/login.php');
 }
 
 ?>
