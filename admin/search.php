@@ -1,5 +1,11 @@
 
-
+<html>
+<head>
+    <title>sms</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
     <?php
 
     include('../connection.php');
@@ -16,48 +22,56 @@
         $data=mysqli_fetch_assoc($run);
         ?>
 
+<body style="background-color: yellow">
 
-<table border="1">
-
-            <tr>
-                <th colspan="3">Student Details</th>
-            </tr>
-
-            <tr>
-                <td colspan="5"><img src="images/<?php echo $data['image']; ?>" style="max-height: 150px;max-width: 150px;"/>
-                </td>
-
-                <th>Roll No</th>
-                <td><?php echo $data['rollno']; ?></td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td><?php echo $data['name']; ?></td>
-            </tr>
-            <tr>
-                <th>City</th>
-                <td><?php echo $data['city']; ?></td>
-            </tr>
-            <tr>
-                <th>Mobile No</th>
-                <td><?php echo $data['phone']; ?></td>
-            </tr>
-            <tr>
-                <th>Standerd</th>
-                <td><?php echo $data['standerd']; ?></td>
-            </tr>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <table class="table table-bordered">
+                <thead>
+             <h2 style="text-align: center">
+                 Student Details
+             </h2>
 
 
-</table>
+                </thead>
+                <tbody>
+                <tr>
+                    <th>Image</th>
+                    <td colspan="5"><img src="../images/<?php echo $data['image']; ?>" style="max-height: 150px;max-width: 150px;"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Roll No</th>
+                    <td><?php echo $data['rollno']; ?></td>
 
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    <td><?php echo $data['name']; ?></td>
+                </tr>
+                <tr>
+                    <th>City</th>
+                    <td><?php echo $data['city']; ?></td>
+                </tr>
+                <tr>
+                    <th>Standerd</th>
+                    <td><?php echo $data['standerd']; ?></td>
+                </tr>
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+</div>
+</body>
     <?php
-    }
-
-else
-{
-    echo "<script>alert('No Student found')</script>";
 }
 
-?>
+        else
+        {
+            echo "<script>alert('No Student found')</script>";
+        }
 
-
+    ?>
